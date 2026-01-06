@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}La cueva del Archivero{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'libros/styles.css' %}">
+</head>
+<body>
+    {% if mostrar_header %}
+<header class="top-bar">
+    <nav class="nav-auth">
+        {% if user.is_authenticated %}
+            <span>👤 {{ user.username }}</span>
+<form method="post" action="{% url 'logout' %}" style="display:inline;">
+    {% csrf_token %}
+    <button type="submit" class="link-button">Cerrar sesión</button>
+</form>
+
+        {% else %}
+            <a href="{% url 'login' %}">Iniciar sesión</a>
+            <a href="{% url 'libros:registro' %}">Registrarse</a>
+        {% endif %}
+    </nav>
+</header>
+{% endif %}
+
+    {% if mostrar_nav %}
+    <header class="header">
+        <div class="container">
+            <h1>Nuestra Biblioteca</h1>
+            <nav>
+                <a href="{% url 'libros:lista_libros' %}">Listado de Libros</a>
+
+            {% if user.is_authenticated %}
+                <a href="{% url 'libros:crear' %}">Agregar nuevo Libro</a>
+                <form method="post" action="{% url 'logout' %}" style="display:inline;">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-secondary">Salir</button>
+                </form>
+            {% else %}
+                <a class="btn" href="{% url 'login' %}">Iniciar sesión</a>
+            {% endif %}
+            </nav>
+        </div>
+    </header>
+    {% endif %}
+
+    <main>
+        {% block content %} {% endblock %}
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <small>La Cueva del Archivero</small>
+        </div>
+    </footer>
+</body>
+</html>

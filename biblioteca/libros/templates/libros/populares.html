@@ -1,0 +1,24 @@
+{% extends "libros/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<a href="{% url 'home' %}" class="btn-back">← Volver al inicio</a>
+
+<h2 class="section-title">{{ titulo }}</h2>
+
+<div class="cards-grid">
+    {% for item in items %}
+        <a href="{{ item.link }}" target="_blank" class="card">
+            <img src="{% static 'libros/'|add:item.imagen %}" alt="{{ item.nombre }}">
+            
+            {% if item.nombre %}
+                <h3>{{ item.nombre }}</h3>
+            {% else %}
+                <h3>{{ item.titulo }}</h3>
+            {% endif %}
+        </a>
+    {% endfor %}
+</div>
+{% endblock %}
+

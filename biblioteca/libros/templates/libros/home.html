@@ -1,0 +1,42 @@
+{% extends "libros/base.html" %}
+{% load static %}
+
+{% block header %}{% endblock %}
+
+{% block content %}
+
+    <!-- TÍTULO -->
+    <header class="home-header">
+        <h1>La Cueva del Archivero</h1>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <section class="home-main">
+
+        <!-- BANNER -->
+        <div class="home-banner">
+            <h2>Archivo en línea de tus libros favoritos</h2>
+            <p>
+                Un lugar para los amantes de la literatura para encontrar sus obras favoritas.
+            </p>
+        </div>
+
+        <!-- ENLACES -->
+        <div class="home-links">
+            <a href="{% url 'libros:libros_populares' %}" class="home-card">📚 Libros populares</a>
+            <a href="{% url 'libros:autores_populares' %}" class="home-card">✍️ Autores más leídos</a>
+            <a href="{% url 'libros:lista_libros' %}" class="home-card">
+                📖 Biblioteca digital
+            </a>
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="home-footer">
+        <p>Información de contacto y redes sociales</p>
+    </footer>
+
+</div>
+
+{% endblock %}

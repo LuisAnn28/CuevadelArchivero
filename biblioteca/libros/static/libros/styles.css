@@ -1,0 +1,380 @@
+:root {
+    --bg: #0b1a4a;              /* Fondo azul oscuro */
+    --bg-light: #f7f7fb;        /* Fondo claro (tarjetas / secciones) */
+    --text: #1f2937;
+    --text-light: #ffffff;
+
+    --primary: #2563eb;
+    --primary-dark: #1e3a8a;
+
+    --secondary: #6b7280;
+    --danger: #dc2626;
+    --border: #e5e7eb;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+header {
+    background-color: var(--header-bg);
+    color: white;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.card, .form-card {
+    background-color: var(--bg-card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.container {
+    background: var(--bg-light);
+    border-radius: 16px;
+    padding: 30px;
+}
+
+
+/* ===== HOME ===== */
+
+.home-container {
+    background-color: var(--bg);
+    color: var(--text-light);
+    min-height: 100vh;
+    padding: 40px;
+}
+
+.home-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.home-header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.home-main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.home-banner {
+    background: var(--bg-light);
+    color: var(--text);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.home-links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.home-card {
+    background: var(--bg-light);
+    color: var(--text);
+    padding: 20px;
+    border-radius: 14px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.home-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+}
+
+.home-footer {
+    margin-top: 60px;
+    text-align: center;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* ===== TABLAS ===== */
+
+.table-container {
+    background: var(--bg-light);
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    margin-top: 30px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--bg-light);
+    color: var(--text);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+thead {
+    background: var(--primary-dark);
+    color: white;
+}
+
+thead th {
+    padding: 14px;
+    text-align: left;
+    font-weight: 600;
+}
+
+tbody td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+}
+
+tbody tr:hover {
+    background: #eef2ff;
+}
+
+/* Links dentro de la tabla */
+table a {
+    color: var(--primary);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+table a:hover {
+    text-decoration: underline;
+}
+
+/* Acciones */
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-edit {
+    background: var(--primary);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.85rem;
+}
+
+.btn-delete {
+    background: var(--danger);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.85rem;
+}
+
+/* Título del listado */
+.list-title {
+    color: #222;
+    margin-bottom: 20px;
+}
+
+/* Botón volver al inicio */
+.back-home {
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+/* =========================
+   CONTENEDOR DE FORMULARIOS Y DETALLES
+   ========================= */
+.card-container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    max-width: 700px;
+    margin: 40px auto;
+    color: var(--text);
+}
+
+/* Títulos dentro de cards */
+.card-container h1,
+.card-container h2,
+.card-container h3 {
+    color: var(--text);
+    margin-bottom: 20px;
+}
+
+/* Párrafos */
+.card-container p {
+    color: var(--text);
+}
+
+/* Formularios */
+.card-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Botón cancelar */
+.btn-cancel {
+    background: #f3f4f6;
+    color: #111827;
+    border: 1px solid #d1d5db;
+    padding: 8px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 500;
+}
+
+.btn-cancel:hover {
+    background: #e5e7eb;
+}
+
+/* =========================
+   TÍTULOS DE PÁGINA
+   ========================= */
+.page-title {
+    color: #ffffff;
+    font-size: 32px;
+    margin: 30px 0 20px;
+}
+
+/* Botón volver */
+.btn-back {
+    display: inline-block;
+    margin: 10px 0 20px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.btn-back:hover {
+    text-decoration: underline;
+}
+
+/* ===== HEADER PRINCIPAL ===== */
+.header {
+    background: #ffffff;
+    border-bottom: 1px solid var(--border);
+}
+
+.header h1 {
+    color: #1f2937;  /* gris oscuro */
+}
+
+/* ===== TARJETAS DE LIBROS ===== */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 1rem;
+    text-align: center;
+    text-decoration: none;
+    color: #1f2937;
+    box-shadow: 0 4px 10px rgba(0,0,0,.1);
+    transition: transform .2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.section-title {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    width: 180px;
+    border-radius: 12px;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    color: #111;
+}
+
+.card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.top-bar {
+    background-color: #0b1d4d;
+    padding: 10px 30px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-auth a,
+.nav-auth span {
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-auth a:hover {
+    text-decoration: underline;
+}
+
+.auth-form {
+    color: #ffffff;
+}
+
+.auth-form label,
+.auth-form h2,
+.auth-form p,
+.auth-form span,
+.auth-form li {
+    color: #ffffff;
+}
+
+.auth-form a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.link-button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0;
+    font-weight: bold;
+}

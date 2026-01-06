@@ -1,0 +1,16 @@
+{% extends 'libros/base.html' %}
+{% block title %}Detalle{% endblock %}
+{% block content %}
+
+<div class="card-container">
+<h2>{{ libro.titulo }}</h2>
+<ul class="list"></ul>
+    <li><strong>Autor:</strong> {{ libro.autor }}</li>
+    <li><strong>Año:</strong> {{ libro.anio }}</li>
+    <li><strong>Género:</strong> {{ libro.genero }}</li>
+</ul>
+    <a href="{% url 'libros:lista_libros' %}" class="btn btn-secondary">
+        ⬅ Volver al listado
+    </a>
+</div>
+{% endblock %}
